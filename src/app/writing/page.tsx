@@ -1,40 +1,32 @@
 import type { Metadata } from "next"
 import { ArrowUpRight } from "lucide-react"
 
+import { SectionHeading } from "@/components/section-heading"
 import { writing } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Writing",
-  description:
-    "Technical writing by Christianah Adekunle on surveillance models, chess prediction, and marketing analytics.",
+  description: "Technical notes by Christianah Adekunle.",
 }
 
 export default function WritingPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 pt-28 pb-20 lg:px-8">
-      <p className="eyebrow">Writing</p>
-      <h1 className="mt-4 font-heading text-4xl sm:text-5xl">
-        Notes from the work
-      </h1>
-      <p className="mt-6 text-lg text-muted-foreground">
-        Articles I published. The matching code is on GitHub.
-      </p>
-
-      <ul className="mt-12 divide-y divide-border border-y border-border">
+      <SectionHeading index="04">Writing</SectionHeading>
+      <ul className="divide-y divide-border border-y border-border">
         {writing.map((post) => (
-          <li key={post.href} className="py-8">
-            <p className="text-[12px] text-muted-foreground">{post.date}</p>
+          <li key={post.href} className="flex items-baseline justify-between gap-4 py-4">
             <a
               href={post.href}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 inline-flex items-start gap-2 font-heading text-2xl hover:text-burgundy"
+              className="inline-flex items-start gap-1 text-sm hover:text-burgundy"
             >
               {post.title}
-              <ArrowUpRight className="mt-1 size-4 shrink-0" />
+              <ArrowUpRight className="mt-0.5 size-3.5 shrink-0" />
             </a>
-            <p className="mt-3 leading-relaxed text-muted-foreground">
-              {post.summary}
+            <p className="shrink-0 font-mono text-xs text-muted-foreground">
+              {post.date}
             </p>
           </li>
         ))}

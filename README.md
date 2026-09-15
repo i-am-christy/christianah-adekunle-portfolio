@@ -1,6 +1,8 @@
 # Christianah Adekunle — Portfolio
 
-Personal site for **Adekunle Christianah Ayomide** (Luna), an AI/ML engineer and first-class Computer Science graduate of FUTA.
+Personal site for **Adekunle Christianah Ayomide** (Luna), an AI/ML engineer and ML Research Intern at Veenode Technologies. First-class Computer Science, FUTA.
+
+The site is short on purpose: home holds a brief about, experience, featured work, and a resume download. Longer notes live on `/about` and on GitHub.
 
 The visual language is matte dark purple (`#160e1a`), deep burgundy (`#6b1c2a`), white type, and charcoal (`#111111`) structural blocks. Type is **Inter** (the same family [victorakinode.com](https://victorakinode.com/) loads from Google Fonts). No gradients, no glow, no glass. The portrait is `public/portrait.jpg` (Aso Imagery).
 
@@ -17,6 +19,7 @@ This project is a Next.js app. After you create a GitHub (or Origin) repository 
 | About, Work, Expertise, Writing, Contact | `src/app/about/page.tsx`, `src/app/work/`, `src/app/expertise/page.tsx`, `src/app/writing/page.tsx`, `src/app/contact/page.tsx` |
 | Colours | `src/app/globals.css` |
 | Portrait | `public/portrait.jpg` |
+| Resume PDF | `public/christianah-adekunle-resume.pdf` |
 | Fonts | `src/app/layout.tsx` (`Inter` from `next/font/google`) |
 
 ```bash
@@ -87,4 +90,6 @@ Logging into the Vercel website does not log in the CLI on another computer.
 
 GitHub Pages is a poor fit here: the site uses Next.js image optimisation and is not a static export.
 
-Add the intern employer in `src/lib/site.ts` when you want that organisation named.
+The downloadable resume is `public/christianah-adekunle-resume.pdf` (regenerate from `scripts/resume.html`). Replace that file if you have a designed CV.
+
+Live: [christianahadekunle.vercel.app](https://christianahadekunle.vercel.app/).

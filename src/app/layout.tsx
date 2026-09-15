@@ -50,7 +50,7 @@ const jsonLd = {
   "@type": "Person",
   name: site.name,
   alternateName: [site.legalName, site.nickname],
-  jobTitle: site.title,
+  jobTitle: `${site.role}, ${site.employer}`,
   image: site.portrait,
   email: `mailto:${site.email}`,
   address: {
@@ -61,6 +61,11 @@ const jsonLd = {
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "Federal University of Technology, Akure",
+  },
+  worksFor: {
+    "@type": "Organization",
+    name: site.employer,
+    url: site.urls.veenode,
   },
   sameAs: [
     site.urls.github,

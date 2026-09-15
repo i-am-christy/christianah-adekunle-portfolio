@@ -17,8 +17,15 @@ export function SiteFooter() {
         <div>
           <p className="font-heading text-lg text-foreground">{site.name}</p>
           <p className="mt-1 text-sm text-muted-foreground">
-            {site.title} · {site.location}
+            {site.role} · {site.employer}
           </p>
+          <a
+            href={site.resume}
+            download="Christianah-Adekunle-Resume.pdf"
+            className="mt-2 inline-block text-sm text-burgundy hover:underline"
+          >
+            Download resume
+          </a>
         </div>
         <div className="flex items-center gap-5">
           {socials.map((item) => (
