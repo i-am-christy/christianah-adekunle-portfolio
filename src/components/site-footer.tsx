@@ -1,12 +1,19 @@
 import Link from "next/link"
 import { Mail } from "lucide-react"
 
-import { GitHubIcon, LinkedInIcon } from "@/components/social-icons"
+import {
+  GitHubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  XIcon,
+} from "@/components/social-icons"
 import { site } from "@/lib/site"
 
 const socials = [
   { href: site.urls.github, label: "GitHub", icon: GitHubIcon },
   { href: site.urls.linkedin, label: "LinkedIn", icon: LinkedInIcon },
+  { href: site.urls.x, label: "X", icon: XIcon },
+  { href: site.urls.instagram, label: "Instagram", icon: InstagramIcon },
   { href: `mailto:${site.email}`, label: "Email", icon: Mail },
 ]
 
@@ -27,7 +34,7 @@ export function SiteFooter() {
             Download resume
           </a>
         </div>
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center gap-5">
           {socials.map((item) => (
             <Link
               key={item.label}

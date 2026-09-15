@@ -19,6 +19,8 @@ export const site = {
   urls: {
     github: "https://github.com/i-am-christy",
     linkedin: "https://linkedin.com/in/christianah-adekunle",
+    x: "https://x.com/luna_is_alleh",
+    instagram: "https://www.instagram.com/techwithchristy",
     hashnode: "https://i-am-christy.hashnode.dev/",
     kaggle: "https://www.kaggle.com/techrookie",
     huggingface: "https://huggingface.co/AllehellA",

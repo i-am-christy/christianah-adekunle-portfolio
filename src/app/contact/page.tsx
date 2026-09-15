@@ -16,6 +16,12 @@ const links = [
     label: "linkedin.com/in/christianah-adekunle",
     hint: "LinkedIn",
   },
+  { href: site.urls.x, label: "x.com/luna_is_alleh", hint: "X" },
+  {
+    href: site.urls.instagram,
+    label: "instagram.com/techwithchristy",
+    hint: "Instagram",
+  },
   { href: site.urls.github, label: "github.com/i-am-christy", hint: "GitHub" },
   {
     href: site.urls.hashnode,

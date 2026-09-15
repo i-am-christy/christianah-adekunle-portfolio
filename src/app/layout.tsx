@@ -41,6 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${site.name} | ${site.title}`,
     description: site.tagline,
+    creator: "@luna_is_alleh",
     images: [site.portrait],
   },
 }
@@ -70,6 +71,8 @@ const jsonLd = {
   sameAs: [
     site.urls.github,
     site.urls.linkedin,
+    site.urls.x,
+    site.urls.instagram,
     site.urls.hashnode,
     site.urls.kaggle,
   ],
