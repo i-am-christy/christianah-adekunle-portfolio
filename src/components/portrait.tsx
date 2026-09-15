@@ -18,7 +18,7 @@ export function Portrait({
           fill
           priority={priority}
           sizes="(min-width: 1024px) 420px, 90vw"
-          className="object-cover object-[center_18%]"
+          className="object-cover object-top"
         />
       </div>
       <figcaption className="sr-only">
