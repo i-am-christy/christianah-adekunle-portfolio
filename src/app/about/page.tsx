@@ -5,6 +5,7 @@ import { Portrait } from "@/components/portrait"
 import { Button } from "@/components/ui/button"
 import {
   about,
+  awards,
   experience,
   leadership,
   site,
@@ -118,6 +119,20 @@ export default function AboutPage() {
           </ul>
         </section>
       </div>
+
+      <section className="mt-16">
+        <p className="eyebrow">Awards</p>
+        <ul className="mt-6 divide-y divide-border border-y border-border">
+          {awards.map((item) => (
+            <li key={item.title} className="py-5">
+              <p className="font-heading text-xl">{item.title}</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                {item.detail}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <section className="mt-16">
         <p className="eyebrow">Skills</p>

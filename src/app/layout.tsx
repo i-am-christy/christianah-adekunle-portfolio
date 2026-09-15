@@ -9,12 +9,12 @@ import "./globals.css"
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
   display: "swap",
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://christianahadekunle.com"),
+  metadataBase: new URL("https://christianahadekunle.vercel.app"),
   title: {
     default: `${site.name} | ${site.title}`,
     template: `%s | ${site.name}`,
@@ -72,11 +72,8 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} h-full`}
-    >
-      <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
+    <html lang="en" className={`${inter.variable} ${inter.className} h-full`}>
+      <body className={`${inter.className} flex min-h-full flex-col bg-background text-foreground`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

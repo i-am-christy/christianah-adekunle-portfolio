@@ -5,7 +5,7 @@ export const site = {
   nickname: "Luna",
   title: "AI/ML Engineer",
   location: "Akure, Ondo State, Nigeria",
-  email: "kunlechristy2019@gmail.com",
+  email: "the.christianah.adekunle@gmail.com",
   headline: "Christianah Adekunle.",
   accent: "Engineer. Builder. First-class.",
   tagline:
@@ -387,6 +387,13 @@ export const experience = [
       "First female, longest-serving, and most active President of the Nigeria Association of Computer Science Students at FUTA.",
   },
   {
+    role: "General Secretary",
+    org: "NACOSS, FUTA Chapter",
+    period: "Undergraduate",
+    detail:
+      "Served as General Secretary of the Nigeria Association of Computer Science Students, FUTA Chapter.",
+  },
+  {
     role: "Chairman, Class of 2024 FYB Committee",
     org: "Department of Computer Science, FUTA",
     period: "2024",
@@ -437,14 +444,31 @@ export const leadership = [
       "First female, longest-serving, and most active President of the Nigeria Association of Computer Science Students, FUTA Chapter.",
   },
   {
+    title: "NACOSS FUTA General Secretary",
+    detail:
+      "Served as General Secretary of the Nigeria Association of Computer Science Students, FUTA Chapter.",
+  },
+  {
     title: "Class of 2024 FYB Chairman",
     detail:
       "Chaired the Computer Science farewell committee — the operational side of graduating a cohort, not just sitting in the photo.",
   },
+] as const
+
+export const awards = [
   {
     title: "Best Graduating Student",
     detail:
       "Department of Computer Science, Class of 2024. CGPA 4.77 / 5.0. Graduate Member, Computer Professionals Registration Council of Nigeria (GMCPN).",
+  },
+  {
+    title: "Most Outstanding NACOSS Executive",
+    detail:
+      "Recognised as the most outstanding NACOSS executive at the FUTA chapter.",
+  },
+  {
+    title: "Academia Female of the Year",
+    detail: "Class of 2024.",
   },
 ] as const
 
@@ -453,7 +477,7 @@ export const about = {
     "Adekunle Christianah Ayomide is an AI/ML engineer who builds systems that leave the notebook. Her work spans computer vision for exam integrity, reinforcement learning for cooperative lending, public-health models for malaria and Lassa fever, and LLM-powered automation.",
   body: [
     "She is a first-class graduate of Computer Science at the Federal University of Technology, Akure, and the Best Graduating Student of the 2024 class (CGPA 4.77/5.0). She currently works as a Machine Learning Engineering Intern, shipping pipelines, voice agents, RAG workflows, and data products.",
-    "Before that title, she was already running things: first female, longest-serving, and most active President of NACOSS FUTA, and Chairman of the Computer Science Class of 2024 FYB Committee. She is a Graduate Member of the Computer Professionals Registration Council of Nigeria (GMCPN).",
+    "Before that title, she was already running things: first female, longest-serving, and most active President of NACOSS FUTA, previously General Secretary of the same association, and Chairman of the Computer Science Class of 2024 FYB Committee. She is a Graduate Member of the Computer Professionals Registration Council of Nigeria (GMCPN).",
     "The through-line in the GitHub is Nigeria-shaped problems: NSL animation, cooperative loan recovery, state-level malaria maps, Lassa signals in tweets. The stack is Python, scikit-learn, PyTorch, FastAPI, n8n, and whatever frontend the user actually needs.",
   ],
   facts: [
@@ -462,6 +486,11 @@ export const about = {
     { label: "Based in", value: "Akure, Ondo State, Nigeria" },
     { label: "Education", value: "B.Tech Computer Science, First Class — FUTA" },
     { label: "Honour", value: "Best Graduating Student, Class of 2024 · 4.77/5.0" },
+    {
+      label: "Awards",
+      value:
+        "Most Outstanding NACOSS Executive · Academia Female of the Year, Class of 2024",
+    },
     { label: "Registration", value: "Graduate Member, CPN (GMCPN)" },
   ],
   education: [
