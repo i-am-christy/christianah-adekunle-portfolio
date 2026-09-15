@@ -31,24 +31,11 @@ export const nav = [
   { href: "/contact", label: "Contact" },
 ] as const
 
-export const communities = [
-  "FUTA",
-  "NACOSS",
-  "DSN",
-  "Kaggle",
-  "Hugging Face",
-  "HNG",
-  "WiDS",
-  "Blue Chip",
-  "Hashnode",
-  "Streamlit",
-] as const
-
 export const stats = [
   { value: "4.77/5.0", label: "CGPA" },
   { value: "Best in CS", label: "Class of 2024" },
   { value: "1st female", label: "NACOSS FUTA President" },
-  { value: "12+", label: "Shipped ML systems" },
+  { value: "8", label: "Projects on GitHub" },
 ] as const
 
 export const highlights = [
@@ -329,28 +316,34 @@ export const projects: Project[] = [
 
 export const competitions = [
   {
-    title: "DSN AI Hackathon",
-    year: "2024–2025",
+    title: "DSN-AI-hackathon-2024",
+    year: "2024",
     href: "https://github.com/i-am-christy/DSN-AI-hackathon-2024",
-    note: "National Data Science Nigeria competition submissions.",
+    note: "This repo contains my submission for DSN/AI hackathon 2024",
   },
   {
-    title: "Blue Chip / Kaggle",
-    year: "2023–2024",
+    title: "blue-chip-comp",
+    year: "2023",
     href: "https://github.com/i-am-christy/blue-chip-comp",
-    note: "Competition notebooks for Blue Chip 2023 and the 2024 Kaggle track.",
+    note: "This repo contains my submission for blue-chip-competition 2023",
   },
   {
-    title: "WiDS Datathon",
+    title: "bluechip-kaggle-2024",
+    year: "2024",
+    href: "https://github.com/i-am-christy/bluechip-kaggle-2024",
+    note: "github.com/i-am-christy/bluechip-kaggle-2024",
+  },
+  {
+    title: "wids-challenge2",
     year: "2024",
     href: "https://github.com/i-am-christy/wids-challenge2",
-    note: "Women in Data Science challenge 2 — applied modelling under a deadline.",
+    note: "The code that I wrote to participate in wids datathon challenge 2 (2024)",
   },
   {
-    title: "HNG Internship tasks",
+    title: "HNG_task_1",
     year: "2025",
     href: "https://github.com/i-am-christy/HNG_task_1",
-    note: "SEO title shortening with data analysis, plus a 9,994-row marketing insight report.",
+    note: "Using Data Analysis for SEO optimization and shortening of product titles",
   },
 ] as const
 
@@ -381,10 +374,10 @@ export const writing = [
 export const experience = [
   {
     role: "Machine Learning Engineering Intern",
-    org: "Applied ML",
-    period: "2026 — Present",
+    org: "",
+    period: "Present",
     detail:
-      "Building production ML pipelines, voice agents, RAG workflows, and data products — from raw data through FastAPI, Streamlit, n8n, and VAPI surfaces.",
+      "I design and ship end-to-end ML pipelines, voice AI agents, and data-driven products — from raw data to production deployment.",
   },
   {
     role: "President",

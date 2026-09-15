@@ -77,7 +77,9 @@ export default function AboutPage() {
               <p className="text-sm text-muted-foreground">{item.period}</p>
               <div>
                 <p className="font-heading text-xl">{item.role}</p>
-                <p className="mt-1 text-sm text-burgundy">{item.org}</p>
+                {item.org ? (
+                  <p className="mt-1 text-sm text-burgundy">{item.org}</p>
+                ) : null}
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {item.detail}
                 </p>

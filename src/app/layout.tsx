@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist_Mono, Inter, Newsreader } from "next/font/google"
+import { Inter } from "next/font/google"
 
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
@@ -11,17 +11,6 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-})
-
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  variable: "--font-newsreader",
-  display: "swap",
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
@@ -85,7 +74,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${newsreader.variable} ${geistMono.variable} h-full`}
+      className={`${inter.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <script

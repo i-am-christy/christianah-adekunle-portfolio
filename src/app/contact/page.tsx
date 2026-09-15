@@ -19,9 +19,14 @@ const links = [
   {
     href: site.urls.hashnode,
     label: "i-am-christy.hashnode.dev",
-    hint: "Writing",
+    hint: "Blog",
   },
-  { href: site.urls.kaggle, label: "kaggle.com/techrookie", hint: "Kaggle" },
+  { href: site.urls.kaggle, label: "kaggle.com/techrookie", hint: "Profile" },
+  {
+    href: site.urls.huggingface,
+    label: "huggingface.co/spaces/AllehellA/nigerian-speech-to-sign",
+    hint: "Demo",
+  },
 ]
 
 export default function ContactPage() {

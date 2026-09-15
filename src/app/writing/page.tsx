@@ -17,7 +17,7 @@ export default function WritingPage() {
         Notes from the work
       </h1>
       <p className="mt-6 text-lg text-muted-foreground">
-        Longer pieces on Hashnode. The code that backs them lives on GitHub.
+        Articles I published. The matching code is on GitHub.
       </p>
 
       <ul className="mt-12 divide-y divide-border border-y border-border">

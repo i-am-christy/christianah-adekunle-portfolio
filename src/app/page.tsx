@@ -6,7 +6,6 @@ import { ProjectCard } from "@/components/project-card"
 import { Button } from "@/components/ui/button"
 import {
   about,
-  communities,
   expertise,
   experience,
   projects,
@@ -52,15 +51,6 @@ export default function HomePage() {
             </div>
           </div>
           <Portrait priority />
-        </div>
-      </section>
-
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-6 py-8 lg:px-8">
-          <p className="eyebrow mb-4">Affiliations</p>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {communities.join("  ·  ")}
-          </p>
         </div>
       </section>
 
@@ -165,7 +155,9 @@ export default function HomePage() {
                 <p className="text-sm text-muted-foreground">{item.period}</p>
                 <div>
                   <p className="font-heading text-xl">{item.role}</p>
-                  <p className="mt-1 text-sm text-burgundy">{item.org}</p>
+                  {item.org ? (
+                    <p className="mt-1 text-sm text-burgundy">{item.org}</p>
+                  ) : null}
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {item.detail}
                   </p>

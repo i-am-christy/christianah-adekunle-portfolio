@@ -31,8 +31,12 @@ export default function WorkPage() {
       </div>
 
       <section className="mt-20">
-        <p className="eyebrow">Competitions</p>
-        <h2 className="mt-4 font-heading text-3xl">Timed and judged</h2>
+        <p className="eyebrow">GitHub</p>
+        <h2 className="mt-4 font-heading text-3xl">Competition and task repos</h2>
+        <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+          Public repositories under github.com/i-am-christy. These are personal
+          submissions and notebooks, not organisational affiliations.
+        </p>
         <ul className="mt-8 divide-y divide-border border-y border-border">
           {competitions.map((item) => (
             <li key={item.title}>
