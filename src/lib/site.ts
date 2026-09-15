@@ -450,7 +450,7 @@ export const leadership = [
 
 export const about = {
   intro:
-    "Adekunle Christianah Ayomide (Luna) is an AI/ML engineer who builds systems that leave the notebook. Her work spans computer vision for exam integrity, reinforcement learning for cooperative lending, public-health models for malaria and Lassa fever, and LLM-powered automation.",
+    "Adekunle Christianah Ayomide is an AI/ML engineer who builds systems that leave the notebook. Her work spans computer vision for exam integrity, reinforcement learning for cooperative lending, public-health models for malaria and Lassa fever, and LLM-powered automation.",
   body: [
     "She is a first-class graduate of Computer Science at the Federal University of Technology, Akure, and the Best Graduating Student of the 2024 class (CGPA 4.77/5.0). She currently works as a Machine Learning Engineering Intern, shipping pipelines, voice agents, RAG workflows, and data products.",
     "Before that title, she was already running things: first female, longest-serving, and most active President of NACOSS FUTA, and Chairman of the Computer Science Class of 2024 FYB Committee. She is a Graduate Member of the Computer Professionals Registration Council of Nigeria (GMCPN).",
