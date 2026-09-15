@@ -12,25 +12,23 @@ export const metadata: Metadata = {
 export default function WritingPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 pt-28 pb-20 lg:px-8">
-      <p className="text-sm font-medium tracking-widest text-cyan-700 uppercase dark:text-cyan-400">
-        Writing
-      </p>
-      <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+      <p className="eyebrow">Writing</p>
+      <h1 className="mt-4 font-heading text-4xl sm:text-5xl">
         Notes from the work
       </h1>
       <p className="mt-6 text-lg text-muted-foreground">
         Longer pieces on Hashnode. The code that backs them lives on GitHub.
       </p>
 
-      <ul className="mt-12 space-y-8">
+      <ul className="mt-12 divide-y divide-border border-y border-border">
         {writing.map((post) => (
-          <li key={post.href} className="border-t border-border pt-8">
-            <p className="text-xs text-muted-foreground">{post.date}</p>
+          <li key={post.href} className="py-8">
+            <p className="text-[12px] text-muted-foreground">{post.date}</p>
             <a
               href={post.href}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 inline-flex items-start gap-2 text-xl font-semibold tracking-tight hover:underline"
+              className="mt-2 inline-flex items-start gap-2 font-heading text-2xl hover:text-burgundy"
             >
               {post.title}
               <ArrowUpRight className="mt-1 size-4 shrink-0" />

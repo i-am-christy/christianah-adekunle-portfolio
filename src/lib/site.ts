@@ -11,6 +11,7 @@ export const site = {
     "Machine learning systems for health, language, and finance. First-class Computer Science graduate from FUTA. Currently an ML engineering intern.",
   summary:
     "I design and ship end-to-end ML pipelines, voice AI agents, and data-driven products — from raw data to production APIs and interactive apps.",
+  portrait: "/portrait.jpg",
   urls: {
     github: "https://github.com/i-am-christy",
     linkedin: "https://linkedin.com/in/christianah-adekunle",
@@ -366,6 +367,53 @@ export const writing = [
     href: "https://i-am-christy.hashnode.dev/marketing-insight-report",
     summary:
       "9,994 transactions later: discounts were eating profit, tables were a trap, and the West region was carrying the business.",
+  },
+] as const
+
+export const experience = [
+  {
+    role: "Machine Learning Engineering Intern",
+    org: "Applied ML",
+    period: "2026 — Present",
+    detail:
+      "Building production ML pipelines, voice agents, and data products — from raw data through FastAPI and Streamlit surfaces.",
+  },
+  {
+    role: "President",
+    org: "NACOSS, FUTA Chapter",
+    period: "Undergraduate",
+    detail:
+      "First female, longest-serving, and most active President of the Nigeria Association of Computer Science Students at FUTA.",
+  },
+  {
+    role: "Chairman, Class of 2024 FYB Committee",
+    org: "Department of Computer Science, FUTA",
+    period: "2024",
+    detail:
+      "Led farewell operations for the graduating Computer Science cohort.",
+  },
+] as const
+
+export const skills = [
+  {
+    group: "Machine learning",
+    items: [
+      "Python",
+      "scikit-learn",
+      "LightGBM",
+      "XGBoost",
+      "CatBoost",
+      "PyTorch",
+      "Q-learning",
+    ],
+  },
+  {
+    group: "Computer vision & language",
+    items: ["YOLOv8", "dlib", "Whisper", "Transformers", "spaCy"],
+  },
+  {
+    group: "Product & data",
+    items: ["FastAPI", "Streamlit", "React", "Node.js", "PostgreSQL", "Docker"],
   },
 ] as const
 

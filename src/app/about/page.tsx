@@ -1,8 +1,16 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
+import { Portrait } from "@/components/portrait"
 import { Button } from "@/components/ui/button"
-import { about, highlights, leadership, site, stats } from "@/lib/site"
+import {
+  about,
+  experience,
+  leadership,
+  site,
+  skills,
+  stats,
+} from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "About",
@@ -11,84 +19,107 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-7xl px-6 pt-28 pb-20 lg:px-8">
-      <p className="text-sm font-medium tracking-widest text-cyan-700 uppercase dark:text-cyan-400">
-        About
-      </p>
-      <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-        Building the future of applied machine learning
-      </h1>
-      <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-        {about.intro}
-      </p>
+    <div className="mx-auto max-w-6xl px-6 pt-28 pb-20 lg:px-8">
+      <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <Portrait />
+        <div>
+          <p className="eyebrow">About</p>
+          <h1 className="mt-4 max-w-xl font-heading text-4xl sm:text-5xl">
+            Building applied machine learning with care
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            {about.intro}
+          </p>
+        </div>
+      </div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <dl className="mt-16 grid grid-cols-2 gap-px bg-border lg:grid-cols-4">
         {stats.map((item) => (
-          <div
-            key={item.label}
-            className="rounded-2xl border border-border bg-card p-6"
-          >
-            <p className="text-2xl font-bold">{item.value}</p>
-            <p className="mt-1 text-sm text-muted-foreground">{item.label}</p>
+          <div key={item.label} className="bg-charcoal p-6">
+            <dt className="text-[11px] tracking-[0.16em] text-muted-foreground uppercase">
+              {item.label}
+            </dt>
+            <dd className="mt-3 font-heading text-2xl">{item.value}</dd>
           </div>
+        ))}
+      </dl>
+
+      <div className="mt-16 space-y-5 text-base leading-relaxed text-muted-foreground">
+        {about.body.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
         ))}
       </div>
 
-      <div className="mt-16 grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
-          {about.body.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+      <section className="mt-20">
+        <p className="eyebrow">Experience</p>
+        <h2 className="mt-4 font-heading text-3xl">Curriculum</h2>
+        <ol className="mt-8 divide-y divide-border border-y border-border">
+          {experience.map((item) => (
+            <li
+              key={item.role}
+              className="grid gap-2 py-6 sm:grid-cols-[200px_1fr]"
+            >
+              <p className="text-sm text-muted-foreground">{item.period}</p>
+              <div>
+                <p className="font-heading text-xl">{item.role}</p>
+                <p className="mt-1 text-sm text-burgundy">{item.org}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {item.detail}
+                </p>
+              </div>
+            </li>
           ))}
-          <div className="flex flex-wrap gap-2 pt-2">
-            {highlights.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-border px-3 py-1 text-xs font-medium text-foreground"
-              >
-                {item}
-              </span>
+        </ol>
+      </section>
+
+      <div className="mt-16 grid gap-12 lg:grid-cols-2">
+        <section>
+          <p className="eyebrow">Education</p>
+          <ul className="mt-6 space-y-6">
+            {about.education.map((item) => (
+              <li key={item.school} className="border-l-2 border-burgundy pl-4">
+                <p className="font-heading text-xl">{item.school}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {item.credential}
+                </p>
+                <p className="text-sm text-muted-foreground">{item.extra}</p>
+              </li>
             ))}
-          </div>
-        </div>
-        <aside className="space-y-8">
-          <div>
-            <h2 className="text-sm font-semibold tracking-widest text-muted-foreground uppercase">
-              Education
-            </h2>
-            <ul className="mt-4 space-y-4">
-              {about.education.map((item) => (
-                <li key={item.school}>
-                  <p className="font-medium text-foreground">{item.school}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {item.credential}
-                  </p>
-                  <p className="text-sm text-muted-foreground">{item.extra}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h2 className="text-sm font-semibold tracking-widest text-muted-foreground uppercase">
-              Leadership
-            </h2>
-            <ul className="mt-4 space-y-4">
-              {leadership.map((item) => (
-                <li key={item.title}>
-                  <p className="font-medium text-foreground">{item.title}</p>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {item.detail}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </aside>
+          </ul>
+        </section>
+        <section>
+          <p className="eyebrow">Leadership</p>
+          <ul className="mt-6 space-y-6">
+            {leadership.map((item) => (
+              <li key={item.title}>
+                <p className="font-heading text-xl">{item.title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                  {item.detail}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
       </div>
 
-      <div className="mt-16 rounded-3xl border border-border bg-muted/40 p-8 sm:p-10">
-        <h2 className="text-2xl font-bold tracking-tight">
-          Ready to work together?
-        </h2>
+      <section className="mt-16">
+        <p className="eyebrow">Skills</p>
+        <div className="mt-8 grid gap-8 sm:grid-cols-3">
+          {skills.map((group) => (
+            <div key={group.group}>
+              <h3 className="font-heading text-xl">{group.group}</h3>
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="mt-16 border border-border bg-charcoal p-8 sm:p-10">
+        <h2 className="font-heading text-3xl">Ready to work together?</h2>
         <p className="mt-3 max-w-2xl text-muted-foreground">
           If you need an ML engineer who can own the data, the model, and the
           interface, write to {site.name.split(" ")[0]} at{" "}
@@ -100,7 +131,7 @@ export default function AboutPage() {
         <Button
           nativeButton={false}
           render={<Link href="/contact" />}
-          className="mt-6 h-10 px-5"
+          className="mt-6 h-11 px-6"
         >
           Get in touch
         </Button>

@@ -1,9 +1,8 @@
 import type { Metadata } from "next"
-import { Geist_Mono, Inter } from "next/font/google"
+import { Geist_Mono, Inter, Newsreader } from "next/font/google"
 
 import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header"
-import { ThemeProvider } from "@/components/theme-provider"
 import { site } from "@/lib/site"
 
 import "./globals.css"
@@ -11,6 +10,12 @@ import "./globals.css"
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+})
+
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  variable: "--font-newsreader",
   display: "swap",
 })
 
@@ -41,11 +46,13 @@ export const metadata: Metadata = {
     description: site.tagline,
     type: "website",
     locale: "en_NG",
+    images: [{ url: site.portrait }],
   },
   twitter: {
     card: "summary_large_image",
     title: `${site.name} | ${site.title}`,
     description: site.tagline,
+    images: [site.portrait],
   },
 }
 
@@ -55,6 +62,7 @@ const jsonLd = {
   name: site.name,
   alternateName: "Adekunle Christianah Ayomide",
   jobTitle: site.title,
+  image: site.portrait,
   email: `mailto:${site.email}`,
   address: {
     "@type": "PostalAddress",
@@ -77,19 +85,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      suppressHydrationWarning
-      className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${newsreader.variable} ${geistMono.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <ThemeProvider>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </ThemeProvider>
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   )
