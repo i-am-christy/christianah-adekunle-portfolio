@@ -24,28 +24,37 @@ export function SiteHeader() {
     <header className="fixed top-0 z-50 w-full border-b border-border bg-background">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 lg:px-8">
         <Logo />
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
-          {nav.map((item) => {
-            const active =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href)
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-[13px] tracking-wide transition-colors ${
-                  active
-                    ? "border-b border-burgundy pb-0.5 text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {item.label}
-              </Link>
-            )
-          })}
-        </nav>
-        <div className="md:hidden">
+        <div className="hidden items-center gap-8 lg:flex">
+          <nav className="flex items-center gap-8" aria-label="Primary">
+            {nav.map((item) => {
+              const active =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(item.href)
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-[13px] tracking-wide transition-colors ${
+                    active
+                      ? "border-b border-burgundy pb-0.5 text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              )
+            })}
+          </nav>
+          <Button
+            nativeButton={false}
+            render={<Link href="/contact" />}
+            className="h-9 px-4"
+          >
+            Work with me
+          </Button>
+        </div>
+        <div className="lg:hidden">
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               render={
@@ -69,6 +78,14 @@ export function SiteHeader() {
                     {item.label}
                   </Link>
                 ))}
+                <Button
+                  nativeButton={false}
+                  render={<Link href="/contact" />}
+                  className="mt-4 h-10"
+                  onClick={() => setOpen(false)}
+                >
+                  Work with me
+                </Button>
               </nav>
             </SheetContent>
           </Sheet>

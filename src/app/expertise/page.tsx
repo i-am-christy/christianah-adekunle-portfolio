@@ -5,7 +5,7 @@ import { expertise, projects } from "@/lib/site"
 export const metadata: Metadata = {
   title: "Expertise",
   description:
-    "Predictive modelling, computer vision, public health ML, voice AI, and data pipelines.",
+    "Predictive modelling, computer vision, public health ML, voice AI, automation, and data pipelines.",
 }
 
 const related: Record<string, string[]> = {
@@ -13,6 +13,7 @@ const related: Record<string, string[]> = {
   "computer-vision": ["testa"],
   "public-health": ["malaria-prediction", "lassa-surveillance"],
   "voice-language": ["signbridge"],
+  "ai-automation": ["signbridge", "lead-pipeline"],
   "data-pipelines": ["lead-pipeline", "crypto-recommender", "lassa-surveillance"],
 }
 

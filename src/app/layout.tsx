@@ -60,7 +60,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: site.name,
-  alternateName: "Adekunle Christianah Ayomide",
+  alternateName: [site.legalName, site.nickname],
   jobTitle: site.title,
   image: site.portrait,
   email: `mailto:${site.email}`,

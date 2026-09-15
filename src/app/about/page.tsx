@@ -27,6 +27,7 @@ export default function AboutPage() {
           <h1 className="mt-4 max-w-xl font-heading text-4xl sm:text-5xl">
             Building applied machine learning with care
           </h1>
+          <p className="mt-3 text-sm text-burgundy">{site.legalName}</p>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             {about.intro}
           </p>
@@ -49,6 +50,20 @@ export default function AboutPage() {
           <p key={paragraph}>{paragraph}</p>
         ))}
       </div>
+
+      <dl className="mt-16 divide-y divide-border border-y border-border">
+        {about.facts.map((item) => (
+          <div
+            key={item.label}
+            className="grid gap-1 py-4 sm:grid-cols-[200px_1fr] sm:items-baseline"
+          >
+            <dt className="text-[11px] tracking-[0.16em] text-muted-foreground uppercase">
+              {item.label}
+            </dt>
+            <dd className="text-sm text-foreground">{item.value}</dd>
+          </div>
+        ))}
+      </dl>
 
       <section className="mt-20">
         <p className="eyebrow">Experience</p>
@@ -104,7 +119,7 @@ export default function AboutPage() {
 
       <section className="mt-16">
         <p className="eyebrow">Skills</p>
-        <div className="mt-8 grid gap-8 sm:grid-cols-3">
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {skills.map((group) => (
             <div key={group.group}>
               <h3 className="font-heading text-xl">{group.group}</h3>

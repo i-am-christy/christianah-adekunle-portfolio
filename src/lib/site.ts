@@ -1,9 +1,10 @@
 export const site = {
   name: "Christianah Adekunle",
+  legalName: "Adekunle Christianah Ayomide",
   shortName: "CA",
   nickname: "Luna",
   title: "AI/ML Engineer",
-  location: "Akure, Nigeria",
+  location: "Akure, Ondo State, Nigeria",
   email: "kunlechristy2019@gmail.com",
   headline: "Christianah Adekunle.",
   accent: "Engineer. Builder. First-class.",
@@ -85,6 +86,13 @@ export const expertise = [
     subtitle: "Speech, RAG, agents",
     description:
       "Whisper transcription, transformer sign-language production, LLM workflows, and voice agents. Building the layer between spoken language and usable software.",
+  },
+  {
+    slug: "ai-automation",
+    title: "AI Automation",
+    subtitle: "Agents, RAG, workflows",
+    description:
+      "Voice agents, LLM-powered workflows, and RAG pipelines — n8n, VAPI, and the Claude API — wired into the tools people already use, not a chatbot in isolation.",
   },
   {
     slug: "data-pipelines",
@@ -376,7 +384,7 @@ export const experience = [
     org: "Applied ML",
     period: "2026 — Present",
     detail:
-      "Building production ML pipelines, voice agents, and data products — from raw data through FastAPI and Streamlit surfaces.",
+      "Building production ML pipelines, voice agents, RAG workflows, and data products — from raw data through FastAPI, Streamlit, n8n, and VAPI surfaces.",
   },
   {
     role: "President",
@@ -412,8 +420,20 @@ export const skills = [
     items: ["YOLOv8", "dlib", "Whisper", "Transformers", "spaCy"],
   },
   {
+    group: "AI automation",
+    items: ["n8n", "VAPI", "Claude API", "RAG", "LLM workflows"],
+  },
+  {
     group: "Product & data",
-    items: ["FastAPI", "Streamlit", "React", "Node.js", "PostgreSQL", "Docker"],
+    items: [
+      "FastAPI",
+      "Streamlit",
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "pandas",
+      "Docker",
+    ],
   },
 ] as const
 
@@ -437,11 +457,19 @@ export const leadership = [
 
 export const about = {
   intro:
-    "Christianah Adekunle is an AI/ML engineer who builds systems that leave the notebook. Her work spans computer vision for exam integrity, reinforcement learning for cooperative lending, and public-health models for malaria and Lassa fever.",
+    "Adekunle Christianah Ayomide (Luna) is an AI/ML engineer who builds systems that leave the notebook. Her work spans computer vision for exam integrity, reinforcement learning for cooperative lending, public-health models for malaria and Lassa fever, and LLM-powered automation.",
   body: [
-    "She is a first-class graduate of Computer Science at the Federal University of Technology, Akure, and the Best Graduating Student of the 2024 class (CGPA 4.77/5.0). She currently works as a Machine Learning Engineering Intern, shipping pipelines, voice agents, and data products.",
-    "Before that title, she was already running things: first female, longest-serving, and most active President of NACOSS FUTA, and Chairman of the Computer Science Class of 2024 FYB Committee. She is a Graduate Member of the Computer Professionals Registration Council of Nigeria.",
-    "The through-line in the GitHub is Nigeria-shaped problems: NSL animation, cooperative loan recovery, state-level malaria maps, Lassa signals in tweets. The stack is Python, scikit-learn, PyTorch, FastAPI, and whatever frontend the user actually needs.",
+    "She is a first-class graduate of Computer Science at the Federal University of Technology, Akure, and the Best Graduating Student of the 2024 class (CGPA 4.77/5.0). She currently works as a Machine Learning Engineering Intern, shipping pipelines, voice agents, RAG workflows, and data products.",
+    "Before that title, she was already running things: first female, longest-serving, and most active President of NACOSS FUTA, and Chairman of the Computer Science Class of 2024 FYB Committee. She is a Graduate Member of the Computer Professionals Registration Council of Nigeria (GMCPN).",
+    "The through-line in the GitHub is Nigeria-shaped problems: NSL animation, cooperative loan recovery, state-level malaria maps, Lassa signals in tweets. The stack is Python, scikit-learn, PyTorch, FastAPI, n8n, and whatever frontend the user actually needs.",
+  ],
+  facts: [
+    { label: "Full name", value: "Adekunle Christianah Ayomide" },
+    { label: "Also", value: "Luna" },
+    { label: "Based in", value: "Akure, Ondo State, Nigeria" },
+    { label: "Education", value: "B.Tech Computer Science, First Class — FUTA" },
+    { label: "Honour", value: "Best Graduating Student, Class of 2024 · 4.77/5.0" },
+    { label: "Registration", value: "Graduate Member, CPN (GMCPN)" },
   ],
   education: [
     {

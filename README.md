@@ -1,8 +1,8 @@
 # Christianah Adekunle — Portfolio
 
-Personal site for **Adekunle Christianah Ayomide**, an AI/ML engineer and first-class Computer Science graduate of FUTA.
+Personal site for **Adekunle Christianah Ayomide** (Luna), an AI/ML engineer and first-class Computer Science graduate of FUTA.
 
-The visual language is matte dark purple, deep burgundy, white type, and charcoal structural blocks. No gradients, no glow. Copy is drawn from GitHub, Hashnode, and public professional records.
+The visual language is matte dark purple (`#160e1a`), deep burgundy (`#6b1c2a`), white type, and charcoal (`#111111`) structural blocks. No gradients, no glow, no glass. Copy is drawn from GitHub, Hashnode, and public professional records. The portrait is `public/portrait.jpg` (Aso Imagery).
 
 ## Run locally
 
@@ -22,12 +22,22 @@ npm start
 
 Next.js (App Router), TypeScript, Tailwind CSS, shadcn/ui.
 
-## Deploy
+## Deploy on Vercel
+
+This is a standard Next.js app. From the project root:
 
 ```bash
 npx vercel --prod --yes
 ```
 
-No database or secrets are required. Replace the intern employer on the About page when you want it public.
+If you are not logged in, create a claimable preview instead:
 
-Photograph: `public/portrait.jpg` (Aso Imagery).
+```bash
+npx vercel deploy --temporary --yes
+```
+
+Then open the claim URL the CLI prints so the deployment stays live under your Vercel account. No database or secrets are required.
+
+GitHub Pages is a poor fit here: the site uses Next.js image optimisation and is not a static export.
+
+Replace the intern employer on the About page when you want that organisation named.
