@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 
+import { HighlightList } from "@/components/highlight-list"
 import { Portrait } from "@/components/portrait"
+import { Reveal } from "@/components/reveal"
 import { Button } from "@/components/ui/button"
 import {
   about,
@@ -10,7 +12,6 @@ import {
   leadership,
   site,
   skills,
-  stats,
 } from "@/lib/site"
 
 export const metadata: Metadata = {
@@ -22,8 +23,8 @@ export default function AboutPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 pt-28 pb-20 lg:px-8">
       <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <Portrait />
-        <div>
+        <Portrait className="portrait-in" />
+        <div className="hero-copy">
           <p className="eyebrow">About</p>
           <h1 className="mt-4 max-w-xl font-heading text-4xl sm:text-5xl">
             Building applied machine learning with care
@@ -35,22 +36,18 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <dl className="mt-16 grid grid-cols-2 gap-px bg-border lg:grid-cols-4">
-        {stats.map((item) => (
-          <div key={item.label} className="bg-charcoal p-6">
-            <dt className="text-[11px] tracking-[0.16em] text-muted-foreground uppercase">
-              {item.label}
-            </dt>
-            <dd className="mt-3 font-heading text-2xl">{item.value}</dd>
-          </div>
-        ))}
-      </dl>
-
-      <div className="mt-16 space-y-5 text-base leading-relaxed text-muted-foreground">
-        {about.body.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+      <div className="mt-14">
+        <p className="eyebrow mb-4">Highlights</p>
+        <HighlightList />
       </div>
+
+      <Reveal>
+        <div className="mt-16 space-y-5 text-base leading-relaxed text-muted-foreground">
+          {about.body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+      </Reveal>
 
       <dl className="mt-16 divide-y divide-border border-y border-border">
         {about.facts.map((item) => (

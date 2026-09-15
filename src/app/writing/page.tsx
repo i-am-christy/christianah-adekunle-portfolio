@@ -12,13 +12,15 @@ export const metadata: Metadata = {
 export default function WritingPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 pt-28 pb-20 lg:px-8">
-      <p className="eyebrow">Writing</p>
-      <h1 className="mt-4 font-heading text-4xl sm:text-5xl">
-        Notes from the work
-      </h1>
-      <p className="mt-6 text-lg text-muted-foreground">
-        Articles I published. The matching code is on GitHub.
-      </p>
+      <div className="hero-copy">
+        <p className="eyebrow">Writing</p>
+        <h1 className="mt-4 font-heading text-4xl sm:text-5xl">
+          Notes from the work
+        </h1>
+        <p className="mt-6 text-lg text-muted-foreground">
+          Articles I published. The matching code is on GitHub.
+        </p>
+      </div>
 
       <ul className="mt-12 divide-y divide-border border-y border-border">
         {writing.map((post) => (

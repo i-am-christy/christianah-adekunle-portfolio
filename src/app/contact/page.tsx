@@ -33,12 +33,14 @@ const links = [
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 pt-28 pb-20 lg:px-8">
-      <p className="eyebrow">Contact</p>
-      <h1 className="mt-4 font-heading text-4xl sm:text-5xl">Get in touch</h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-        Open roles, research collaborations, and product work. The form opens a
-        mail draft to {site.email} — nothing is stored on this site.
-      </p>
+      <div className="hero-copy">
+        <p className="eyebrow">Contact</p>
+        <h1 className="mt-4 font-heading text-4xl sm:text-5xl">Get in touch</h1>
+        <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+          Open roles, research collaborations, and product work. The form opens a
+          mail draft to {site.email} — nothing is stored on this site.
+        </p>
+      </div>
       <div className="mt-8">
         <Button
           nativeButton={false}

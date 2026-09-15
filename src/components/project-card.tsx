@@ -5,7 +5,7 @@ import type { Project } from "@/lib/site"
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="flex h-full flex-col border border-border bg-background">
+    <article className="project-card flex h-full flex-col border border-border bg-background transition-transform duration-300 hover:-translate-y-1">
       <div className="flex items-center justify-between border-b border-border bg-charcoal px-5 py-3">
         <p className="text-[11px] tracking-[0.18em] text-muted-foreground uppercase">
           {project.category}

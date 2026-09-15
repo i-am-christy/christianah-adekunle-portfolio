@@ -35,9 +35,10 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-[13px] tracking-wide transition-colors ${
+                  data-active={active ? "true" : "false"}
+                  className={`nav-link text-[13px] tracking-wide transition-colors ${
                     active
-                      ? "border-b border-burgundy pb-0.5 text-foreground"
+                      ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >

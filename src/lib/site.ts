@@ -35,18 +35,29 @@ export const nav = [
   { href: "/contact", label: "Contact" },
 ] as const
 
-export const stats = [
-  { value: "4.77/5.0", label: "CGPA" },
-  { value: "Best in CS", label: "Class of 2024" },
-  { value: "1st female", label: "NACOSS FUTA President" },
-  { value: "8", label: "Projects on GitHub" },
-] as const
-
 export const highlights = [
-  "AI & ML Engineer",
-  "NLP for African languages",
-  "Computer Vision",
-  "Public Health ML",
+  {
+    kicker: "Class of 2024",
+    title: "4.77 / 5.0",
+    detail: "Best Graduating Student, Computer Science, FUTA.",
+  },
+  {
+    kicker: "NACOSS FUTA",
+    title: "Tech Confluence",
+    detail:
+      "Hosted the first ever — and largest — NACOSS Tech Confluence. Theme: Green Tech.",
+  },
+  {
+    kicker: "SmartBizCrux",
+    title: "DataLab",
+    detail:
+      "Managed a community of data professionals at DataLab, SmartBizCrux.",
+  },
+  {
+    kicker: "NACOSS FUTA",
+    title: "First female President",
+    detail: "Longest-serving and most active President of the chapter.",
+  },
 ] as const
 
 export const expertise = [
@@ -421,7 +432,7 @@ export const experience = [
     org: "NACOSS, FUTA Chapter",
     period: "Undergraduate",
     detail:
-      "First female, longest-serving, and most active President of the Nigeria Association of Computer Science Students at FUTA.",
+      "First female, longest-serving, and most active President of the Nigeria Association of Computer Science Students at FUTA. Hosted the first ever and largest NACOSS Tech Confluence — theme: Green Tech.",
   },
   {
     role: "General Secretary",
@@ -436,6 +447,13 @@ export const experience = [
     period: "2024",
     detail:
       "Led farewell operations for the graduating Computer Science cohort.",
+  },
+  {
+    role: "Community Lead, DataLab",
+    org: "SmartBizCrux",
+    period: "Undergraduate",
+    detail:
+      "Managed a community of data professionals called DataLab at SmartBizCrux.",
   },
 ] as const
 
@@ -480,7 +498,17 @@ export const leadership = [
   {
     title: "NACOSS FUTA President",
     detail:
-      "First female, longest-serving, and most active President of the Nigeria Association of Computer Science Students, FUTA Chapter.",
+      "First female, longest-serving, and most active President of the Nigeria Association of Computer Science Students, FUTA Chapter. Hosted the first ever and largest NACOSS Tech Confluence (Green Tech).",
+  },
+  {
+    title: "NACOSS Tech Confluence",
+    detail:
+      "Convened the first ever and largest NACOSS Tech Confluence at FUTA. The theme was Green Tech.",
+  },
+  {
+    title: "DataLab, SmartBizCrux",
+    detail:
+      "Managed a community of data professionals called DataLab at SmartBizCrux.",
   },
   {
     title: "NACOSS FUTA General Secretary",

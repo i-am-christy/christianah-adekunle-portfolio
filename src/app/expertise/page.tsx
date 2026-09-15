@@ -20,14 +20,16 @@ const related: Record<string, string[]> = {
 export default function ExpertisePage() {
   return (
     <div className="mx-auto max-w-6xl px-6 pt-28 pb-20 lg:px-8">
-      <p className="eyebrow">Expertise</p>
-      <h1 className="mt-4 max-w-3xl font-heading text-4xl sm:text-5xl">
-        Machine learning with a product spine
-      </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-        Five lanes I keep returning to. Each one has shipped code on GitHub,
-        not just a slide.
-      </p>
+      <div className="hero-copy">
+        <p className="eyebrow">Expertise</p>
+        <h1 className="mt-4 max-w-3xl font-heading text-4xl sm:text-5xl">
+          Machine learning with a product spine
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+          Five lanes I keep returning to. Each one has shipped code on GitHub,
+          not just a slide.
+        </p>
+      </div>
 
       <div className="mt-14">
         {expertise.map((item) => {

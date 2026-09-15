@@ -12,15 +12,17 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 pt-28 pb-20 lg:px-8">
-      <p className="eyebrow">Work</p>
-      <h1 className="mt-4 max-w-3xl font-heading text-4xl sm:text-5xl">
-        Building solutions that matter
-      </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-        From exam proctoring to outbreak surveillance. Each project is a
-        commitment to a real constraint — a camera, a cooperative ledger, a
-        household survey — not a toy dataset.
-      </p>
+      <div className="hero-copy">
+        <p className="eyebrow">Work</p>
+        <h1 className="mt-4 max-w-3xl font-heading text-4xl sm:text-5xl">
+          Building solutions that matter
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+          From exam proctoring to outbreak surveillance. Each project is a
+          commitment to a real constraint — a camera, a cooperative ledger, a
+          household survey — not a toy dataset.
+        </p>
+      </div>
 
       <div className="mt-12 grid gap-px bg-border md:grid-cols-2">
         {projects.map((project) => (
