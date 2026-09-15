@@ -34,22 +34,26 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-6 pt-28 pb-20 lg:px-8">
+    <div className="mx-auto max-w-3xl px-6 pt-28 pb-20 lg:px-8">
       <Link
         href="/work"
-        className="inline-flex items-center gap-1 font-mono text-sm text-muted-foreground hover:text-foreground"
+        className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
       >
-        <ArrowLeft className="size-4" /> Work
+        <ArrowLeft className="size-4" /> All work
       </Link>
-      <p className="mt-8 font-mono text-sm text-burgundy">{project.category}</p>
-      <h1 className="mt-3 font-heading text-4xl">{project.title}</h1>
-      <p className="mt-4 text-muted-foreground">{project.summary}</p>
-
-      <div className="mt-8 flex flex-wrap gap-3">
+      <p className="eyebrow mt-8">
+        {project.category} · {project.status}
+      </p>
+      <h1 className="mt-4 font-heading text-4xl sm:text-5xl">{project.title}</h1>
+      <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+        {project.summary}
+      </p>
+      <div className="mt-6 flex flex-wrap gap-3">
         <Button
           nativeButton={false}
           render={<a href={project.github} target="_blank" rel="noreferrer" />}
-          className="h-11"
+          variant="outline"
+          className="h-11 border-border"
         >
           GitHub <ArrowUpRight />
         </Button>
@@ -57,10 +61,9 @@ export default async function ProjectPage({ params }: Props) {
           <Button
             nativeButton={false}
             render={<a href={project.live} target="_blank" rel="noreferrer" />}
-            variant="outline"
-            className="h-11 border-border"
+            className="h-11"
           >
-            Live <ArrowUpRight />
+            Live demo <ArrowUpRight />
           </Button>
         ) : null}
       </div>
@@ -68,33 +71,48 @@ export default async function ProjectPage({ params }: Props) {
       {project.metrics ? (
         <dl className="mt-10 grid grid-cols-3 gap-px bg-border">
           {project.metrics.map((metric) => (
-            <div key={metric.label} className="bg-charcoal p-4">
-              <dt className="font-mono text-[11px] text-muted-foreground">
+            <div key={metric.label} className="bg-charcoal p-5">
+              <dt className="text-[11px] tracking-[0.14em] text-muted-foreground uppercase">
                 {metric.label}
               </dt>
-              <dd className="mt-1 font-heading text-xl">{metric.value}</dd>
+              <dd className="mt-2 font-heading text-2xl">{metric.value}</dd>
             </div>
           ))}
         </dl>
       ) : null}
 
-      <p className="mt-10 text-sm leading-relaxed text-muted-foreground">
-        {project.problem} {project.description}
-      </p>
-      <p className="mt-6 font-mono text-xs text-muted-foreground">
-        {project.stack.join("  ·  ")}
-      </p>
-      <p className="mt-8 text-sm text-muted-foreground">
-        Full write-up and setup:{" "}
-        <a
-          href={project.github}
-          className="text-foreground underline-offset-4 hover:text-burgundy hover:underline"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {project.github.replace("https://", "")}
-        </a>
-      </p>
+      <section className="mt-12 space-y-3">
+        <h2 className="font-heading text-2xl">The problem</h2>
+        <p className="leading-relaxed text-muted-foreground">{project.problem}</p>
+      </section>
+      <section className="mt-10 space-y-3">
+        <h2 className="font-heading text-2xl">What I built</h2>
+        <p className="leading-relaxed text-muted-foreground">
+          {project.description}
+        </p>
+      </section>
+      <section className="mt-10">
+        <h2 className="font-heading text-2xl">Key features</h2>
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+          {project.features.map((feature) => (
+            <li key={feature}>{feature}</li>
+          ))}
+        </ul>
+      </section>
+      <section className="mt-10 space-y-3">
+        <h2 className="font-heading text-2xl">Impact</h2>
+        <p className="leading-relaxed text-muted-foreground">{project.impact}</p>
+      </section>
+      <section className="mt-10 space-y-3">
+        <h2 className="font-heading text-2xl">My role</h2>
+        <p className="leading-relaxed text-muted-foreground">{project.role}</p>
+      </section>
+      <section className="mt-10">
+        <h2 className="font-heading text-2xl">Stack</h2>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          {project.stack.join("  ·  ")}
+        </p>
+      </section>
     </div>
   )
 }

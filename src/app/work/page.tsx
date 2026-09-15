@@ -1,83 +1,58 @@
 import type { Metadata } from "next"
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
 
-import { SectionHeading } from "@/components/section-heading"
+import { ProjectCard } from "@/components/project-card"
 import { competitions, projects } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "Selected machine learning projects by Christianah Adekunle.",
+  description:
+    "Machine learning and AI systems by Christianah Adekunle — computer vision, public health, reinforcement learning, and data products.",
 }
 
 export default function WorkPage() {
   return (
-    <div className="mx-auto max-w-3xl px-6 pt-28 pb-20 lg:px-8">
-      <SectionHeading index="03">Work</SectionHeading>
-      <p className="mb-10 max-w-xl text-muted-foreground">
-        One-line notes. Code and write-ups live on GitHub.
+    <div className="mx-auto max-w-6xl px-6 pt-28 pb-20 lg:px-8">
+      <p className="eyebrow">Work</p>
+      <h1 className="mt-4 max-w-3xl font-heading text-4xl sm:text-5xl">
+        Building solutions that matter
+      </h1>
+      <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
+        From exam proctoring to outbreak surveillance. Each project is a
+        commitment to a real constraint — a camera, a cooperative ledger, a
+        household survey — not a toy dataset.
       </p>
 
-      <ol>
-        {projects.map((project, index) => (
-          <li
-            key={project.slug}
-            className="grid gap-3 border-b border-border py-6 sm:grid-cols-[3rem_1fr]"
-          >
-            <p className="font-mono text-sm text-burgundy">
-              {String(index + 1).padStart(2, "0")}.
-            </p>
-            <div>
-              <h2 className="font-heading text-xl">{project.title}</h2>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {project.summary}
-              </p>
-              <p className="mt-2 font-mono text-xs text-muted-foreground">
-                {project.stack.slice(0, 6).join("  ·  ")}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-4 text-sm">
-                <Link href={`/work/${project.slug}`} className="hover:text-burgundy">
-                  Overview
-                </Link>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1 hover:text-burgundy"
-                >
-                  GitHub <ArrowUpRight className="size-3.5" />
-                </a>
-                {project.live ? (
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-1 hover:text-burgundy"
-                  >
-                    Live <ArrowUpRight className="size-3.5" />
-                  </a>
-                ) : null}
-              </div>
-            </div>
-          </li>
+      <div className="mt-12 grid gap-px bg-border md:grid-cols-2">
+        {projects.map((project) => (
+          <div key={project.slug} className="bg-background">
+            <ProjectCard project={project} />
+          </div>
         ))}
-      </ol>
+      </div>
 
-      <section className="mt-16">
-        <p className="font-mono text-sm text-burgundy">Also on GitHub</p>
-        <ul className="mt-4 divide-y divide-border border-y border-border">
+      <section className="mt-20">
+        <p className="eyebrow">GitHub</p>
+        <h2 className="mt-4 font-heading text-3xl">Competition and task repos</h2>
+        <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+          Public repositories under github.com/i-am-christy. These are personal
+          submissions and notebooks, not organisational affiliations.
+        </p>
+        <ul className="mt-8 divide-y divide-border border-y border-border">
           {competitions.map((item) => (
             <li key={item.title}>
               <a
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex justify-between gap-4 py-3 text-sm hover:text-burgundy"
+                className="flex flex-col gap-1 py-5 hover:text-burgundy sm:flex-row sm:items-baseline sm:justify-between"
               >
-                <span>{item.title}</span>
-                <span className="font-mono text-xs text-muted-foreground">
-                  {item.year}
-                </span>
+                <div>
+                  <p className="font-heading text-xl">{item.title}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {item.note}
+                  </p>
+                </div>
+                <p className="text-sm text-muted-foreground">{item.year}</p>
               </a>
             </li>
           ))}

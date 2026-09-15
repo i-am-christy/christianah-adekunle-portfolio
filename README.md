@@ -1,8 +1,8 @@
 # Christianah Adekunle — Portfolio
 
-Personal site for **Adekunle Christianah Ayomide** (Luna), an AI/ML engineer and ML Research Intern at Veenode Technologies. First-class Computer Science, FUTA.
+Personal site for **Adekunle Christianah Ayomide** (Luna), an AI/ML engineer and ML Research Intern at Veenode Technologies working on NLP for low-resource African languages. First-class Computer Science, FUTA.
 
-The site is short on purpose: home holds a brief about, experience, featured work, and a resume download. Longer notes live on `/about` and on GitHub.
+Home uses a two-column hero with portrait, an about block with stats, practice lanes, project cards, experience, and writing. Resume is downloadable from the header.
 
 The visual language is matte dark purple (`#160e1a`), deep burgundy (`#6b1c2a`), white type, and charcoal (`#111111`) structural blocks. Type is **Inter** (the same family [victorakinode.com](https://victorakinode.com/) loads from Google Fonts). No gradients, no glow, no glass. The portrait is `public/portrait.jpg` (Aso Imagery).
 
