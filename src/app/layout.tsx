@@ -55,7 +55,7 @@ const jsonLd = {
   email: `mailto:${site.email}`,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Akure",
+    addressLocality: "Lagos",
     addressCountry: "NG",
   },
   alumniOf: {

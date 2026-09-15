@@ -12,7 +12,7 @@ const related: Record<string, string[]> = {
   "predictive-modelling": ["malaria-prediction", "cooperative-rl", "crypto-recommender"],
   "computer-vision": ["testa"],
   "public-health": ["malaria-prediction", "lassa-surveillance"],
-  "voice-language": ["signbridge"],
+  "voice-language": ["whisper-nigerian", "signbridge"],
   "ai-automation": ["signbridge", "lead-pipeline"],
   "data-pipelines": ["lead-pipeline", "crypto-recommender", "lassa-surveillance"],
 }

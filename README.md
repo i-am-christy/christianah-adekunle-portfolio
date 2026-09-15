@@ -90,6 +90,6 @@ Logging into the Vercel website does not log in the CLI on another computer.
 
 GitHub Pages is a poor fit here: the site uses Next.js image optimisation and is not a static export.
 
-The downloadable resume is `public/christianah-adekunle-resume.pdf` (regenerate from `scripts/resume.html`). Replace that file if you have a designed CV.
+The downloadable resume is `public/christianah-adekunle-resume.pdf`, converted from the attached CV.
 
 Live: [christianahadekunle.vercel.app](https://christianahadekunle.vercel.app/).

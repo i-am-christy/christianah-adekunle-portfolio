@@ -6,12 +6,12 @@ export const site = {
   title: "AI/ML Engineer",
   role: "ML Research Intern",
   employer: "Veenode Technologies",
-  location: "Akure, Ondo State, Nigeria",
+  location: "Lagos, Nigeria",
   email: "the.christianah.adekunle@gmail.com",
   headline: "Christianah Adekunle.",
   accent: "Engineer. Builder. First-class.",
   tagline:
-    "ML Research Intern at Veenode Technologies, building NLP for low-resource African languages. First-class Computer Science, FUTA.",
+    "Machine Learning Research Intern at Veenode Technologies, building a Nigerian code-switching NLP pipeline. First-class Computer Science, FUTA.",
   summary:
     "I design and ship end-to-end ML pipelines, voice AI agents, and data-driven products — from raw data to production APIs and interactive apps.",
   portrait: "/portrait.jpg",
@@ -21,7 +21,7 @@ export const site = {
     linkedin: "https://linkedin.com/in/christianah-adekunle",
     hashnode: "https://i-am-christy.hashnode.dev/",
     kaggle: "https://www.kaggle.com/techrookie",
-    huggingface: "https://huggingface.co/spaces/AllehellA/nigerian-speech-to-sign",
+    huggingface: "https://huggingface.co/AllehellA",
     veenode: "https://veenode.org",
   },
 } as const
@@ -76,7 +76,7 @@ export const expertise = [
     title: "Voice & Language AI",
     subtitle: "Low-resource NLP",
     description:
-      "NLP for low-resource African languages: Whisper transcription, Nigerian Sign Language production, transformers, RAG, and voice agents.",
+      "NLP for low-resource African languages: Whisper ASR for Nigerian-accented English, code-switching pipelines, and Nigerian Sign Language pose generation.",
   },
   {
     slug: "ai-automation",
@@ -113,27 +113,53 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "whisper-nigerian",
+    title: "Whisper-Small Nigerian ASR",
+    category: "Speech",
+    status: "Open source",
+    summary:
+      "Fine-tuned openai/whisper-small on Nigerian-accented English; normalized WER 5.25% (7.97% raw) on held-out eval.",
+    problem:
+      "Off-the-shelf ASR struggles with Nigerian-accented English, which breaks every pipeline that starts with speech.",
+    description:
+      "Fine-tuned openai/whisper-small on a Nigerian-accented English speech dataset and published the model plus a full model card — hyperparameters and before/after metrics — to Hugging Face Hub.",
+    features: [
+      "Full fine-tune of Whisper-small",
+      "Held-out evaluation with WER",
+      "Model card with training hyperparameters",
+      "Published on Hugging Face Hub",
+    ],
+    impact:
+      "Normalized WER dropped from the pretrained baseline to 5.25% (7.97% raw) on held-out eval.",
+    role: "Fine-tuning, evaluation, and Hub publication.",
+    stack: ["PyTorch", "Transformers", "Whisper", "Hugging Face Hub"],
+    github: "https://huggingface.co/AllehellA/whisper-small-nigerian-en",
+    live: "https://huggingface.co/AllehellA/whisper-small-nigerian-en",
+    metrics: [
+      { label: "Norm. WER", value: "5.25%" },
+      { label: "Raw WER", value: "7.97%" },
+    ],
+  },
+  {
     slug: "signbridge",
     title: "SignBridge",
     category: "Voice & Language AI",
     status: "Open source",
     summary:
-      "Spoken English to 3D Nigerian Sign Language — Whisper, a pose transformer, and a Three.js avatar for a low-resource African language.",
+      "Spoken Nigerian English to sign-language pose sequences via a pose transformer. The 3D avatar is still in progress.",
     problem:
-      "Most speech tools stop at text. Deaf Nigerians who use NSL still have to wait for a human interpreter.",
+      "Most speech tools stop at text. NSL users still need a signed output, not a caption.",
     description:
-      "SignBridge is a real-time translator between spoken English and Nigerian Sign Language. Audio is transcribed with OpenAI Whisper, mapped to skeletal pose sequences by a custom Progressive Transformer, and rendered on a 3D avatar with React Three Fiber. The Hugging Face Space hosts a public demo of the speech-to-sign pipeline.",
+      "Audio is transcribed and a Progressive Transformer produces pose / animation data for Nigerian Sign Language. The Hugging Face Space is the live demo of that pose generation. A 3D avatar renderer is not shipped yet.",
     features: [
-      "Whisper speech-to-text",
-      "Progressive Transformer for sign-language production",
-      "3D avatar with React Three Fiber",
-      "Live microphone capture and file upload",
-      "FastAPI inference service",
+      "Speech-to-text into the pose pipeline",
+      "Progressive Transformer for sign-language pose generation",
+      "Hugging Face Space demo of animation data",
     ],
     impact:
-      "A working prototype of accessible communication for NSL users — not a caption, a signed animation.",
-    role: "Designed the ML pipeline and FastAPI backend; the frontend consumes pose data and drives the avatar.",
-    stack: ["PyTorch", "Whisper", "FastAPI", "React", "Three.js", "Tailwind"],
+      "A working pose-generation step toward accessible NSL output, without claiming a finished 3D product.",
+    role: "Designed and trained the pose-transformer pipeline and published the demo on Hugging Face.",
+    stack: ["PyTorch", "Whisper", "Transformers", "Hugging Face"],
     github: "https://github.com/i-am-christy/speech-to-sign-backend",
     live: "https://huggingface.co/spaces/AllehellA/nigerian-speech-to-sign",
   },
@@ -199,11 +225,11 @@ export const projects: Project[] = [
     category: "Public Health ML",
     status: "Live",
     summary:
-      "Random Forest on the 2021 Nigeria Malaria Indicator Survey, deployed as a household predictor and state-level choropleth.",
+      "Random Forest on NMIS 2021 (70,428 records), with a household risk predictor and a state-level choropleth.",
     problem:
       "Nigeria carries about 27% of the global malaria burden. National programmes still allocate nets and tests with coarse geography.",
     description:
-      "A supervised pipeline on 10,717 valid RDT results from NMIS 2021. Logistic Regression, Decision Tree, and Random Forest are trained with 10-fold stratified CV and SMOTE. The winning Random Forest (AUC-ROC 0.80) is served in Streamlit: a household form that returns Low / Moderate / High risk, and a choropleth of positivity across 37 states.",
+      "A supervised pipeline on the Nigeria Malaria Indicator Survey 2021 (70,428 records). Logistic Regression, Decision Tree, and Random Forest are trained with 10-fold stratified CV and SMOTE. The winning Random Forest (AUC-ROC 0.80) is served in Streamlit: a household form that returns Low / Moderate / High risk, and a choropleth of positivity across 37 states.",
     features: [
       "NMIS 2021 household-member recode (DHS)",
       "RF importance screening and SMOTE",
@@ -229,7 +255,7 @@ export const projects: Project[] = [
     category: "Public Health ML",
     status: "Open source",
     summary:
-      "Tweet scraper, weak supervision, TF-IDF + Random Forest, and a FastAPI service that returns relevance, confidence, and Nigerian location.",
+      "Tweet-relevance classifier packaged as a Dockerised FastAPI service on Render, with spaCy NER for Nigerian location.",
     problem:
       "Official Lassa reporting lags the outbreak. Digital traces on social media appear first, but they are noisy and unlocated.",
     description:
@@ -243,8 +269,8 @@ export const projects: Project[] = [
     ],
     impact:
       "Shows that outbreak intelligence does not need a giant LLM. A portable model can flag relevant posts and attach a location in milliseconds.",
-    role: "Designed the labelling strategy, trained the classifier, and packaged inference as a containerised API. Wrote the technical walkthrough on Hashnode.",
-    stack: ["Python", "scikit-learn", "spaCy", "FastAPI", "Docker"],
+    role: "Took the classifier from notebook to a containerised FastAPI service on Render — packaging model artifacts and dependencies into a working Docker image. Wrote the technical walkthrough on Hashnode.",
+    stack: ["Python", "scikit-learn", "spaCy", "FastAPI", "Docker", "Render"],
     github: "https://github.com/i-am-christy/lassa_fever_surveillance_model",
   },
   {
@@ -377,11 +403,18 @@ export const writing = [
 
 export const experience = [
   {
-    role: "ML Research Intern",
+    role: "Machine Learning Research Intern",
     org: "Veenode Technologies",
-    period: "Present",
+    period: "2025 – Present",
     detail:
-      "Build NLP solutions for low-resource African languages — digging until an answer exists, then turning it into something that ships.",
+      "Building a Nigerian code-switching NLP pipeline (English, Nigerian Pidgin, Yoruba, Hausa, Igbo) starting from the MENYO-20k dataset, including synthetic data generation strategies, under a Lagos AI research team.",
+  },
+  {
+    role: "Data Analyst Intern",
+    org: "Ondo State Contributory Health Commission",
+    period: "Jul 2024 – Nov 2024",
+    detail:
+      "Built Power BI and Excel dashboards for departmental KPI reporting; used Python (Pandas) to automate data aggregation across multiple sources.",
   },
   {
     role: "President",
@@ -411,18 +444,18 @@ export const skills = [
     group: "Machine learning",
     items: [
       "Python",
+      "PyTorch",
+      "Hugging Face Transformers",
       "scikit-learn",
-      "TensorFlow",
       "LightGBM",
       "XGBoost",
       "CatBoost",
-      "PyTorch",
       "Q-learning",
     ],
   },
   {
     group: "Computer vision & language",
-    items: ["YOLOv8", "dlib", "Whisper", "Transformers", "spaCy"],
+    items: ["Whisper", "YOLOv8", "dlib", "Transformers", "spaCy"],
   },
   {
     group: "AI automation",
@@ -432,12 +465,13 @@ export const skills = [
     group: "Product & data",
     items: [
       "FastAPI",
+      "Docker",
+      "Hugging Face Hub",
       "Streamlit",
       "React",
-      "Node.js",
       "PostgreSQL",
       "pandas",
-      "Docker",
+      "Power BI",
     ],
   },
 ] as const
@@ -487,9 +521,9 @@ export const about = {
   ],
   facts: [
     { label: "Full name", value: "Adekunle Christianah Ayomide" },
-    { label: "Now", value: "ML Research Intern, Veenode Technologies" },
+    { label: "Now", value: "Machine Learning Research Intern, Veenode Technologies" },
     { label: "Also", value: "Luna" },
-    { label: "Based in", value: "Akure, Ondo State, Nigeria" },
+    { label: "Based in", value: "Lagos, Nigeria" },
     { label: "Education", value: "B.Tech Computer Science, First Class — FUTA" },
     { label: "Honour", value: "Best Graduating Student, Class of 2024 · 4.77/5.0" },
     {
@@ -503,7 +537,7 @@ export const about = {
     {
       school: "Federal University of Technology, Akure",
       credential: "B.Tech Computer Science, First Class",
-      extra: "Best Graduating Student, Class of 2024 · CGPA 4.77/5.0",
+      extra: "Nov 2019 – Nov 2025 · Best Graduating Student, Class of 2024 · CGPA 4.77/5.0",
     },
     {
       school: "Computer Professionals Registration Council of Nigeria",

@@ -55,15 +55,19 @@ export default async function ProjectPage({ params }: Props) {
           variant="outline"
           className="h-11 border-border"
         >
-          GitHub <ArrowUpRight />
+          {project.github.includes("huggingface.co")
+            ? "Hugging Face"
+            : "GitHub"}{" "}
+          <ArrowUpRight />
         </Button>
-        {project.live ? (
+        {project.live && project.live !== project.github ? (
           <Button
             nativeButton={false}
             render={<a href={project.live} target="_blank" rel="noreferrer" />}
             className="h-11"
           >
-            Live demo <ArrowUpRight />
+            {project.live.includes("huggingface.co") ? "Demo" : "Live demo"}{" "}
+            <ArrowUpRight />
           </Button>
         ) : null}
       </div>

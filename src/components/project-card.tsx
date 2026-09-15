@@ -32,16 +32,20 @@ export function ProjectCard({ project }: { project: Project }) {
             rel="noreferrer"
             className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground"
           >
-            GitHub <ArrowUpRight className="size-4" />
+            {project.github.includes("huggingface.co")
+              ? "Hugging Face"
+              : "GitHub"}{" "}
+            <ArrowUpRight className="size-4" />
           </a>
-          {project.live ? (
+          {project.live && project.live !== project.github ? (
             <a
               href={project.live}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground"
             >
-              Live <ArrowUpRight className="size-4" />
+              {project.live.includes("huggingface.co") ? "Demo" : "Live"}{" "}
+              <ArrowUpRight className="size-4" />
             </a>
           ) : null}
         </div>
