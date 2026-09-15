@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Open [http://127.0.0.1:43127](http://127.0.0.1:43127).
+Open [http://127.0.0.1:43127](http://127.0.0.1:43127). The dev server binds to `127.0.0.1` so Cursor preview and `/_next` assets are not blocked as a cross-origin request.
 
 ```bash
 npm run build
